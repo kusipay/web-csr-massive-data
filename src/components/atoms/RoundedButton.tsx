@@ -1,12 +1,15 @@
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 
-type RoundedButton = {
-  text: string;
+type RoundedButton = PropsWithChildren & {
   size?: "big" | "normal" | "small";
   onClick?: () => void;
 };
 
-export const RoundedButton: FC<RoundedButton> = ({ text, size = "normal" }) => {
+export const RoundedButton: FC<RoundedButton> = ({
+  children,
+  size = "normal",
+  onClick = () => {},
+}) => {
   const sizeClassName =
     size === "big" ? "text-lg" : size === "normal" ? "text-base" : "text-sm";
 
@@ -14,8 +17,9 @@ export const RoundedButton: FC<RoundedButton> = ({ text, size = "normal" }) => {
     <button
       type="button"
       className={`bg-black text-white px-8 p-2 rounded-full ${sizeClassName}`}
+      onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   );
 };

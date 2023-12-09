@@ -4,9 +4,13 @@ import { RoundedButton } from "../atoms/RoundedButton";
 import { Grid } from "../atoms/Grid";
 import { Card } from "../atoms/Card";
 
-type TemplatesSectionProps = object;
+type TemplatesSectionProps = {
+  onNewTemplateClick?: () => void;
+};
 
-export const TemplatesSection: FC<TemplatesSectionProps> = () => {
+export const TemplatesSection: FC<TemplatesSectionProps> = ({
+  onNewTemplateClick = () => {},
+}) => {
   return (
     <div className="mt-10">
       <div className="ml-4">
@@ -14,11 +18,9 @@ export const TemplatesSection: FC<TemplatesSectionProps> = () => {
       </div>
 
       <div className="mx-4 mt-4 flex justify-center">
-        <RoundedButton
-          text="Nueva plantilla"
-          size="big"
-          onClick={() => alert("nuevo proceso")}
-        />
+        <RoundedButton size="big" onClick={onNewTemplateClick}>
+          Nueva plantilla
+        </RoundedButton>
       </div>
 
       <div className="mt-4 mx-4">
