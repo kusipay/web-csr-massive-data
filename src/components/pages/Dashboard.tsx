@@ -1,11 +1,17 @@
-import { FC } from "react";
-import { Button } from "../atoms/Button";
+import type { FC } from "react";
+import { Layout } from "../atoms/Layout";
+import { DashboardHeader } from "../organism/DashboardHeader";
+import { ProcessSection } from "../organism/ProcessSection";
+import { TemplatesSection } from "../organism/TemplatesSection";
 
 export const Dashboard: FC = () => {
   return (
-    <div>
-      <Button name="first" onClick={() => alert("hello")} />
-      <Button name="second" onClick={() => alert("world")} />
-    </div>
+    <Layout>
+      <DashboardHeader />
+
+      <ProcessSection />
+
+      <TemplatesSection />
+    </Layout>
   );
 };
