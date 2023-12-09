@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { DashboardTemplate } from "./components/templates/DashboardTemplate/DashboardTemplate";
+import { MainPageRouter } from "./components/pages/MainPageRouter/MainPageRouter";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <DashboardTemplate
-      onNewProcessClick={() => alert("new process")}
-      onNewTemplateClick={() => alert("new template")}
-    />
+    <MainPageRouter />
   </React.StrictMode>,
 );
