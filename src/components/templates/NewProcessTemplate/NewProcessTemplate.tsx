@@ -1,8 +1,6 @@
 import { type FC } from "react";
 import { Layout } from "../../atoms/Layout";
-import { TitleSection } from "../../organism/TitleSection/TitleSection";
-import { CsvUploader } from "../../organism/CsvUploader/CsvUploader";
-import { NextButtonSection } from "../../organism/NextButtonSection/NextButtonSection";
+import { TemplateList } from "../../organism/TemplateList/TemplateList";
 
 type NewProcessTemplateProps = {
   todo?: string;
@@ -11,11 +9,7 @@ type NewProcessTemplateProps = {
 export const NewProcessTemplate: FC<NewProcessTemplateProps> = () => {
   return (
     <Layout>
-      <TitleSection title="Nuevo proceso" />
-
-      <CsvUploader />
-
-      <NextButtonSection />
+      <TemplateList />
     </Layout>
   );
 };
