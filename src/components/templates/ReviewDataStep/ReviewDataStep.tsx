@@ -6,14 +6,17 @@ import { ExcelInfo } from "../../organism/ExcelInfo/ExcelInfo";
 
 type ReviewDataStepProps = {
   todo?: string;
+  onClick?: () => void;
 };
 
-export const ReviewDataStep: FC<ReviewDataStepProps> = () => {
+export const ReviewDataStep: FC<ReviewDataStepProps> = ({
+  onClick = () => {},
+}) => {
   return (
     <Layout>
       <TitleSection title="Revisar datos del archivo" />
       <ExcelInfo />
-      <NextButtonSection />
+      <NextButtonSection onClick={onClick} />
     </Layout>
   );
 };
